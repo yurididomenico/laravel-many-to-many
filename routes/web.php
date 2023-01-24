@@ -33,9 +33,9 @@ Route::middleware('auth')
     ->group(function()
     {
         Route::get('/', 'HomeController@index')->name('index');
+        //Controller che gestiscono CRUD
+        Route::resource('/posts', PostController::class);
     });
-
-
 
 // Gestire rotte senza Auth
 Route::get('{any?}', function()
