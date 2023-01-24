@@ -19,16 +19,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes(); //Gestisce da qui in poi le rotte di autenticazione (con il modello Auth)
+//Gestisce da qui in poi le rotte di autenticazione (con il modello Auth)
+Auth::routes();
 
 // Gestire rotte sotto Auth
 
 //Middleware: controlla se esiste la persona loggata che richiede la rotta
 //Admin: fa partire tutta la logica dalla cartella Admin
-Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->group(function()
-{
-    Route::get('/', 'HomeController@index')->name('index');
-});
+Route::middleware('auth')
+    ->namespace('Admin')
+    ->prefix('admin')
+    ->name('admin.')
+    ->group(function()
+    {
+        Route::get('/', 'HomeController@index')->name('index');
+    });
 
 
 
