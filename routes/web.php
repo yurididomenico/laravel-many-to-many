@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(); //Gestisce da qui in poi le rotte di autenticazione (con il modello Auth)
 
 Route::get('/home', 'HomeController@index')->name('home');
