@@ -38,6 +38,10 @@ Route::middleware('auth')
 
 
 // Gestire rotte senza Auth
+Route::get('{any?}', function()
+{
+    return view('guest.home');
+})->where("any", "*");
 
 
 
