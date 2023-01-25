@@ -1,5 +1,6 @@
 <?php
 
+use App\Post;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 
@@ -12,7 +13,7 @@ class PostSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for($i; $i<100; $i++)
+        for($i=0; $i<100; $i++)
         {
             $newPost = new Post();
             $newPost->title = $faker->words(5, true);
