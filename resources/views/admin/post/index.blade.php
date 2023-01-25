@@ -1,7 +1,6 @@
 @extends('layouts.dashboard')
 
 @section('content')
-    <h1>Posts</h1>
 
     <table class="table">
         <thead>
@@ -24,5 +23,9 @@
         </tbody>
     </table>
 
-    {{ $posts->links() }}
+    <div class="d-flex justify-content-center">
+        {{ $posts->links() }}
+    </div>
+
+
 @endsection
