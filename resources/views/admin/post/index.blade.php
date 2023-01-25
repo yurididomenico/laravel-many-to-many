@@ -2,6 +2,8 @@
 
 @section('content')
 
+    <a href="{{ route('admin.post.create') }}"> + </a>
+
     <table class="table">
         <thead>
             <tr>
@@ -19,7 +21,14 @@
                     <a href="{{ route('admin.posts.show', $post->id) }}">{{ $post->title }}</a>
                 </td>
                 <td>{{ $post->body }}</td>
-                <td>icone</td>
+                <td>
+                    <a href="{{ route('admin.post.edit', $post->id) }}">
+                        Edit
+                    </a>
+                    {{-- <a href="{{ route('admin.post.delete', $post->id) }}">
+                        Delete
+                    </a> --}}
+                </td>
             </tr>
             @endforeach
         </tbody>
