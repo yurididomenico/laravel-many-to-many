@@ -2,9 +2,13 @@
 
 @section('content')
 
-    <a href="{{ route('admin.post.create') }}"> + </a>
+    <h1 class="text-center p-3">Posts</h1>
 
-    <table class="table">
+    <div class="pb-3">
+        <a href="{{ route('admin.posts.create') }}">Crea un nuovo Post</a>
+    </div>
+
+    <table class="table pt-3">
         <thead>
             <tr>
                 <th scope="col">#ID</th>
@@ -22,10 +26,10 @@
                 </td>
                 <td>{{ $post->body }}</td>
                 <td>
-                    <a href="{{ route('admin.post.edit', $post->id) }}">
+                    <a href="{{ route('admin.posts.edit', $post->id) }}">
                         Edit
                     </a>
-                    {{-- <a href="{{ route('admin.post.delete', $post->id) }}">
+                    {{-- <a href="{{ route('admin.posts.delete', $post->id) }}">
                         Delete
                     </a> --}}
                 </td>
