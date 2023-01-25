@@ -19,9 +19,12 @@ class PostController extends Controller
         // $userId = Auth::id();
         // $user = Auth::user();
 
-        $posts = Post::paginate(10);
+        $data =
+        [
+            'posts' => Post::paginate(10)
+        ];
 
-        return view('admin.post.index', compact('posts'));
+        return view('admin.post.index', $data);
     }
 
     /**
