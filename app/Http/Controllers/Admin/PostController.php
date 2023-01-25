@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,11 +16,12 @@ class PostController extends Controller
      */
     public function index()
     {
-        $userId = Auth::id();
-        $user = Auth::user();
+        // $userId = Auth::id();
+        // $user = Auth::user();
 
+        $posts = Post::paginate(10);
 
-        return view('admin.post.index', compact('userId', 'user'));
+        return view('admin.post.index', compact('posts'));
     }
 
     /**
