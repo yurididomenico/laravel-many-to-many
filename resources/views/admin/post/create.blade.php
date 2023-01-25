@@ -13,11 +13,21 @@
         <div class="my-4">
             <label class="form-label" for="">Titolo</label>
             <input class="form-control" type="text" name="title">
+            @error('title')
+                <div class="alert alert-danger">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
 
         <div class="my-4">
             <label class="form-label" for="">Body</label>
             <textarea class="form-control" type="text" name="body"></textarea>
+            @error('body')
+                <div class="alert alert-danger">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
 
         <div class="mb-4">
