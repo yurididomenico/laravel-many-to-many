@@ -22,8 +22,19 @@ class PostController extends Controller
 
         $data =
         [
-            'posts' => Post::paginate(10)
+            'posts' => Post::with('category')->paginate(10)
         ];
+
+        // $post =
+        // [
+        //     'title' => 'Il Lonfo',
+        //     'body' => 'Il Lonfo non vaterca mai',
+        //     'category' =>
+        //     [
+        //         'name' => 'nomeCategoria',
+        //         'created_at' => '26/01/23',
+        //     ]
+        // ];
 
         return view('admin.post.index', $data);
     }
