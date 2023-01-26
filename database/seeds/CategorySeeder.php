@@ -1,5 +1,6 @@
 <?php
 
+use App\Category;
 use Illuminate\Database\Seeder;
 
 class CategorySeeder extends Seeder
@@ -11,6 +12,20 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        //
+        $categories =
+        [
+            'Antipasti',
+            'Primi',
+            'Secondi',
+            'Contorni',
+            'Dolci'
+        ];
+
+        foreach($categories as $category)
+        {
+            $newCategory = new Category();
+            $newCategory->name = $category;
+            $newCategory->save();
+        }
     }
 }
