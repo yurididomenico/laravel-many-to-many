@@ -30,6 +30,19 @@
             @enderror
         </div>
 
+        <div class="my-4">
+            <label for="">Categories</label>
+            <select name="category_id" id="">
+                <option value="">Seleziona la categoria</option>
+                @foreach ($categories as $category)
+
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+
+                @endforeach
+
+            </select>
+        </div>
+
         <div class="mb-4">
             <button type="submit" class="btn btn-primary">Crea</button>
         </div>
