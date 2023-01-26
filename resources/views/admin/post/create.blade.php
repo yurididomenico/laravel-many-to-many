@@ -32,7 +32,7 @@
 
         <div class="my-4">
             <label for="">Categories</label>
-            <select name="category_id" id="" class="form-control">
+            <select name="category_id" class="form-control">
                 <option value="">Seleziona la categoria</option>
                 @foreach ($categories as $category)
 
