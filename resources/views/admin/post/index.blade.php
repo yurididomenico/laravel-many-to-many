@@ -14,6 +14,7 @@
                 <th scope="col">#ID</th>
                 <th scope="col">Title</th>
                 <th scope="col">Body</th>
+                <th scope="col">category_id</th>
                 <th scope="col">Actions</th>
             </tr>
         </thead>
@@ -25,6 +26,7 @@
                     <a href="{{ route('admin.posts.show', $post->id) }}">{{ $post->title }}</a>
                 </td>
                 <td>{{ $post->body }}</td>
+                <td>{{ $post->category_id }}</td>
                 <td>
                     <a href="{{ route('admin.posts.edit', $post->id) }}">
                         Edit
