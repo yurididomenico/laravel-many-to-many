@@ -26,7 +26,11 @@
                     <a href="{{ route('admin.posts.show', $post->id) }}">{{ $post->title }}</a>
                 </td>
                 <td>{{ $post->body }}</td>
-                <td>{{ $post->category_id }}</td>
+                <td>
+                    @if ($post->category)
+                        {{ $post->category['name'] }}
+                    @endif
+                </td>
                 <td>
                     <a href="{{ route('admin.posts.edit', $post->id) }}">
                         Edit
