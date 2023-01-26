@@ -27,7 +27,7 @@ class UpdateAddForeignCategoryPostsTable extends Migration
     public function down()
     {
         Schema::table('posts', function (Blueprint $table) {
-            //
+            $table->dropForeign('post_category_id_foreign');
         });
     }
 }
