@@ -19,4 +19,9 @@ class Post extends Model
         //Il singolo post avrà una sola categoria associata
         return $this->belongsTo('App\Category');
     }
+
+    public function tags()
+    {
+        return $this->belongsToMany('App\Tag');
+    }
 }
