@@ -43,6 +43,21 @@
             </select>
         </div>
 
+        <div class="my-4">
+
+            <label for="">Tags:</label>
+            @foreach ($tags as $tag)
+                <label for="">
+                    <input type="checkbox" name="tags[]" value="{{ $tag->id }}">
+                    {{ $tag->name }}
+                    <span></span>
+                </label>
+            @endforeach
+
+
+
+        </div>
+
         <div class="mb-4">
             <button type="submit" class="btn btn-primary">Crea</button>
         </div>
