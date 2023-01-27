@@ -47,6 +47,16 @@
             </select>
         </div>
 
+        <div class="my-4">
+            <label for="">Tags:</label>
+            @foreach ($tags as $tag)
+                <label for="">
+                    <input class="form-check-input" type="checkbox" name="tags[]" value="{{ $tag->id }}" {{ $post->tags->contains($tag) ? 'checked' : '' }}>
+                    {{ $tag->name }}
+                </label>
+            @endforeach
+        </div>
+
         <div class="mb-4">
             <button type="submit" class="btn btn-primary">Modifica</button>
         </div>

@@ -50,7 +50,6 @@
                 <label for="">
                     <input type="checkbox" name="tags[]" value="{{ $tag->id }}">
                     {{ $tag->name }}
-                    <span></span>
                 </label>
             @endforeach
 
