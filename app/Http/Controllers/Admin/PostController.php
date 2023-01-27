@@ -74,6 +74,12 @@ class PostController extends Controller
         $newPost->fill($data);
         $newPost->save();
 
+        //Controllo utente checkbox
+        if( array_key_exists( 'tags', $data ) )
+        {
+            $newPost->tags()->sync( $data['tags'] );
+        }
+
         return redirect()->route('admin.posts.index');
     }
 
