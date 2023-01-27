@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Category;
 use App\Post;
+use App\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -46,12 +47,11 @@ class PostController extends Controller
      */
     public function create()
     {
-        $data =
-        [
-            'categories' => Category::All()
-        ];
 
-        return view('admin.post.create', $data);
+        $categories = Category::All();
+        $tags = Tag::All();
+
+        return view('admin.post.create', compact('categories', 'tags'));
     }
 
     /**
