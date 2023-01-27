@@ -126,6 +126,18 @@ class PostController extends Controller
         $singoloPost = Post::findOrFail($id);
 
         $singoloPost->update($data);
+
+        //Controllo utente checkbox
+        if( array_key_exists( 'tags', $data ) )
+        {
+            $singoloPost->tags()->sync( $data['tags'] );
+        }
+        else
+        {
+            $singoloPost->tags()->sync([]);
+        }
+
+
         return redirect()->route('admin.posts.show', $singoloPost->id);
     }
 
