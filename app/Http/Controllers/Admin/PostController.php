@@ -71,6 +71,12 @@ class PostController extends Controller
         ]);
 
         $newPost = new Post();
+        //Controllo immagine caricata nell'input
+        if( array_key_exists('image', $data) )
+        {
+            $cover_url = Storage::put('post_covers', $data['image']);
+            $data['cover'] = $cover_url;
+        }
         $newPost->fill($data);
         $newPost->save();
 
