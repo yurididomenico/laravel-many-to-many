@@ -44,7 +44,6 @@
         </div>
 
         <div class="my-4">
-
             <label for="">Tags:</label>
             @foreach ($tags as $tag)
                 <label for="">
@@ -52,9 +51,11 @@
                     {{ $tag->name }}
                 </label>
             @endforeach
+        </div>
 
-
-
+        <div class="my-4">
+            <label for="">Aggiunta immagine copertina</label>
+            <input type="file" name="image" class="form-control-file">
         </div>
 
         <div class="mb-4">
