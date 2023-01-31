@@ -6,7 +6,7 @@
 
     <h1>Crea un Post</h1>
 
-    <form action="{{ route('admin.posts.store') }}" method="POST" class="text-start py-4">
+    <form action="{{ route('admin.posts.store') }}" method="POST" enctype="multipart/form-data" class="text-start py-4">
 
         @csrf
 
