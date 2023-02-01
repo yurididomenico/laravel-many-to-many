@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Category;
+use App\Mail\CreatePostMail;
 use App\Post;
 use App\Tag;
 use Illuminate\Http\Request;
@@ -86,6 +87,9 @@ class PostController extends Controller
         {
             $newPost->tags()->sync( $data['tags'] );
         }
+
+        //Invio mail di creazione
+        $mail = new CreatePostMail();
 
         return redirect()->route('admin.posts.index');
     }
