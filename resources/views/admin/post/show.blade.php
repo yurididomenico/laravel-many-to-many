@@ -8,7 +8,7 @@
 
     <img class="img-fluid" src="{{ asset("storage/$singolo_post->cover") }}" alt="">
 
-    <p>
+    <p class="fs-2 my-4">
         {{ $singolo_post->body }}
     </p>
 
