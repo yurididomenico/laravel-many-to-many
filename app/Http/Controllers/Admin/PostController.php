@@ -157,6 +157,10 @@ class PostController extends Controller
     public function destroy($id)
     {
         $singoloPost = Post::findOrFail($id);
+        if($singoloPost->cover)
+        {
+            Storage::delete($singoloPost->cover);
+        }
         $singoloPost->tags()->sync([]);
         $singoloPost->delete();
 
