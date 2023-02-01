@@ -15,5 +15,17 @@
 </head>
 <body>
     <h1>Post Creato con successo!</h1>
+    <h2>{{ $post->title }}</h2>
+    <p>Descrizione:
+        {{ $post->body }}
+    </p>
+    <p>Catagoria:
+        {{ $post->category->name }}
+    </p>
+    <p>
+        @foreach ($post->tags as $elem)
+            <li>{{ $elem->name }}</li>
+        @endforeach
+    </p>
 </body>
 </html>
