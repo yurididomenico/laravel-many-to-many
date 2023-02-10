@@ -36,11 +36,11 @@
                         Edit
                     </a>
                     <form method="POST" action="{{ route('admin.posts.destroy', $post->id) }}">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger">
-                        Delete
-                    </button>
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">
+                            Delete
+                        </button>
 
                     </form>
                 </td>
